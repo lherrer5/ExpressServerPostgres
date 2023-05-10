@@ -1,5 +1,5 @@
-const newProductSchema=require("./validator");
-const updateProduct=require("./validator");
+const newProductSchema=require("./joiValidatorSchema");
+const updateProduct=require("./joiValidatorSchema");
 
 
 const pdtoSchemaValidation=(req, res, next) => {
