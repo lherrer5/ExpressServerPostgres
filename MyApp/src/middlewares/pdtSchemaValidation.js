@@ -1,8 +1,6 @@
-const newProductSchema=require("./joiValidatorSchema");
-const updateProduct=require("./joiValidatorSchema");
+const { newProductSchema, updateProduct } = require("./joiValidatorSchema");
 
-
-const pdtoSchemaValidation=(req, res, next) => {
+const pdtSchemaValidation=(req, res, next) => {
     const {error}=newProductSchema.validate(req.body, {abortEarly: false});
     if (error) {
         res.json(error.message);
@@ -22,5 +20,4 @@ const updateSchemaValidation=(req, res, next) => {
 };
 
 
-module.exports=pdtoSchemaValidation
-module.exports=updateSchemaValidation
+module.exports= {pdtSchemaValidation, updateSchemaValidation}

@@ -1,11 +1,11 @@
 const { Router } = require("express");
 const router = Router();
-const { healthCheck, welcomePage } = require("../controllers/healthCheckController")
+const { healthCheckController } = require("../controllers")
 
 
 router
-    .get("/", welcomePage)
-    .get("/health", healthCheck)
+    .get("/", healthCheckController.welcomePage)
+    .get("/health", healthCheckController.healthCheck)
     .use("/api/v1/products", require("./productRoute"))
     .use("/api/v1/users", require("./userRoute"));
 

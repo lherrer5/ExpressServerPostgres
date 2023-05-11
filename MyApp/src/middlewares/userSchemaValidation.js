@@ -1,6 +1,4 @@
-const newUserSchema=require("./joiValidatorSchema");
-const updateUser=require("./joiValidatorSchema");
-
+const { newUserSchema, updateUser } = require("./joiValidatorSchema");
 
 const userSchemaValidation=(req, res, next) => {
     const {error}=newUserSchema.validate(req.body);
@@ -22,5 +20,4 @@ const userUpdateSchemaValidation=(req, res, next) => {
 };
 
 
-module.exports=userSchemaValidation
-module.exports=userUpdateSchemaValidation
+module.exports={userSchemaValidation,userUpdateSchemaValidation}
