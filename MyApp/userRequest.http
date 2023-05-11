@@ -12,10 +12,10 @@ POST http://localhost:3080/api/v1/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName": "Lina",
+    "firstName": "Carlos",
     "lastName": "Herrera",
-    "birthday": "1985-10-01",
-    "dni": 43221357,
+    "birthday": "1952-12-17",
+    "dni": 70042297,
     "country": "Colombia"
 }
 
@@ -27,5 +27,5 @@ PATCH  http://localhost:3080/api/v1/users/1 HTTP/1.1
 Content-Type: application/json
 
 {
-    "firstName":"Lina Maria"
+    "firstName":"Lina"
 }

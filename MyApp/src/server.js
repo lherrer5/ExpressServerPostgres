@@ -2,14 +2,15 @@ require('dotenv').config();
 
 const express = require("express");
 const mongoose = require('mongoose');
-const { errorHandler, notFoundHandler } = require("./middlewares/errorH");
-const sequelize= require("./utils/postgresql")
+const { errorHandler, notFoundHandler} = require("./middlewares");
+const routes = require("./routes");
+const sequelize= require("./utils/postgresql");
 const PORT = process.env.PORT || 3080,
     app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/", require("./routes"));
+app.use("/", routes);
 app.use(notFoundHandler);
 app.use(errorHandler);
 
@@ -22,6 +23,7 @@ const start = async () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
+        await sequelize.authenticate();
         await sequelize.sync(); 
 
         app.listen(PORT, () => {

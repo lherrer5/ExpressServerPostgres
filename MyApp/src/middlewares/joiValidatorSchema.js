@@ -16,6 +16,23 @@ const updateProduct = Joi.object({
     description: Joi.string().optional()
 }).min(1);
 
+const newUserSchema = Joi.object({
+    firstName: Joi.string().required(),
+    lastname: Joi.string().required(),
+    birthday: Joi.date().iso().max('now').min('1900-01-01').required(),
+    dni: Joi.number().integer().required(),
+    country: Joi.string().required(),
+  });
+  
+  const updateUser = Joi.object({
+    firstName: Joi.string().optional(),
+    lastname: Joi.string().optional(),
+    birthday: Joi.date().iso().max('now').min('1900-01-01').optional(),
+    dni: Joi.number().integer().optional(),
+    country: Joi.string().optional(),
+  });
 
 module.exports = newProductSchema
 module.exports =updateProduct
+module.exports =newUserSchema
+module.exports =updateUser

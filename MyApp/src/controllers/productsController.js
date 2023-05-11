@@ -1,15 +1,21 @@
-const { Product } = require("../models");
+//const { Product } = require("../models");
+const { Product } = require("../models/productModel");
 
 //GET
-const getAllProducts = async (_, res) => {
+const getAllProducts = async (_, res, next) => {
+    try {
     console.log("Correct getAllProducts");
 
     const allProducts = await Product.find();
     res.json(allProducts);
+} catch (error) {
+    next(error);
+}
 };
 
 //GET by ID
-const getProductById = async (req, res) => {
+const getProductById = async (req, res, next) => {
+    try {
     console.log("Correct getProductById");
     const { id } = req.params;
     const product = await Product.findById(id);
@@ -17,7 +23,12 @@ const getProductById = async (req, res) => {
         return res.status(404).json({ error: "Product not found" });
     }
     res.json(product);
+} catch (error) {
+    res.status(500).json({ error: error.message });
+    next(error);
+}
 };
+
 //POST
 // const createProduct = async (req, res, next) => {
 //         const newProduct = new Product(req.body);
@@ -32,7 +43,7 @@ const createProduct = async (req, res, next) => {
         await newProduct.save();
         console.log("Correct createProduct");
         res.status(201).json(newProduct);
-//As a good practice, the connection should be closed
+        //connection to be closed
         //mongoose.connection.close();
     } catch (error) {
         res.status(500).json({ error: error.message });
