@@ -23,7 +23,7 @@ const start = async () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-        await sequelize.authenticate();
+       // await sequelize.authenticate();
         await sequelize.sync(); 
 
         app.listen(PORT, () => {
