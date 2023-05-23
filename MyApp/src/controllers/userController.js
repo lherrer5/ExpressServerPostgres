@@ -1,4 +1,6 @@
 const { User } = require("../models");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 
 
 exports.getAllUsers = async (_, res, next) => {
@@ -22,21 +24,6 @@ exports.getUserById = async (req, res, next) => {
     }
 };
 
-    // /v1/users?offset=0&limit=10
-    // exports.getAllUsers = async (_, res, next) => {
-    //     console.log("Correct getAllUsers");
-    //     const {offset, limit}= req.query;
-
-    //     try{
-    //         const users = await User.findAll({
-    //             offset,
-    //             limit
-    //         });
-    //         res.json(users);
-    //     }catch(error){
-    //         next(error);
-    //     }
-    // };
 
     exports.createUser = async (req, res, next) => {
         try {
@@ -76,5 +63,43 @@ exports.getUserById = async (req, res, next) => {
         res.json(user);
     }catch (error) {
         next(error);
+    }
+};
+
+exports.login = async (req, res) => {
+    const { id, password } = req.body;
+
+    try {
+        // Search for user in data base
+        const user = await User.findOne({ where: { id } });
+
+        // Verify user
+        if (!user) {
+            return res.status(404).json({ error: "Usuario no encontrado" });
+        }
+
+        // Compare password 
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+
+        if (!isPasswordValid) {
+            return res.status(401).json({ error: "Credenciales inválidas" });
+        }
+
+        // Create JWT token
+        const token = jwt.sign(
+            { id: user.id, email: user.email },
+            process.env.JWT_SECRET_KEY,
+            { expiresIn: "1h" }
+        );
+
+        res.status(200).json({
+            success: true,
+            data: {
+                token,
+            },
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Error en el servidor" });
     }
 };
