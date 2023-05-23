@@ -67,11 +67,11 @@ exports.updateUser = async (req, res, next) => {
 };
 
 exports.login = async (req, res) => {
-    const { id, password } = req.body;
+    const { username, password } = req.body;
 
     try {
-        // Search for user in data base
-        const user = await User.findOne({ where: { id } });
+        // Search for user in database
+        const user = await User.findOne({ where: { username } });
 
         // Verify user
         if (!user) {
