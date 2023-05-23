@@ -16,11 +16,13 @@ Content-Type: application/json
     "lastName": "Herrera",
     "birthday": "1952-12-17",
     "dni": 70042297,
+    "username": "xxxx",
+    "password": "xxxx",
     "country": "Colombia"
 }
 
 ###DELETE con ID unico
-DELETE http://localhost:3080/api/v1/users/2 HTTP/1.1
+DELETE http://localhost:3080/api/v1/users/3 HTTP/1.1
 
 ###PATCH con ID unico
 PATCH  http://localhost:3080/api/v1/users/1 HTTP/1.1

@@ -1,7 +1,8 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require("../utils/postgresql");
+const bcrypt = require('bcrypt');
 
-class User extends Model {}
+class User extends Model { }
 
 User.init({
     firstName: {
@@ -15,8 +16,23 @@ User.init({
     birthday: {
         type: DataTypes.DATE,//YYYY-MM-DD
         allowNull: true
-    }, 
+    },
     dni: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        unique: true,
+        validate: {
+            isEmail: {
+                args: true,
+                msg: 'Username should be a valid email'
+            }
+        }
+    },
+    password: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -24,9 +40,14 @@ User.init({
         type: DataTypes.STRING,
         allowNull: false
     }
-},{
+}, {
     sequelize,
     modelName: 'User'
-})
+});
+
+User.beforeCreate(async (user) => {
+    const hashedPassword = await bcrypt.hash(user.password, 10);
+    user.password = hashedPassword;
+  });
 
 module.exports = User;
