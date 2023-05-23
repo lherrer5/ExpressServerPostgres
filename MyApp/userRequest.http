@@ -26,7 +26,6 @@ Authorization: Bearer
 ###POST login
 POST http://localhost:3080/api/v1/users/login HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer
 
 {
     "username": "carlos_herrera@gmail.com",
