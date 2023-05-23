@@ -1,6 +1,11 @@
 # GET con y sin id
 GET http://localhost:3080/api/v1/users/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg0ODc2NDYwLCJleHAiOjE2ODQ4ODAwNjB9.5y2unrnKGAyPR7s7qs74FQNzqJYsw1hmiJLamLZ3iK0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg0ODc5MjIyLCJleHAiOjE2ODQ4ODI4MjJ9.N8jG0s78FOIaHJq4KFvZoG_qDDyYtIU348rMxxVbqpM
+
+### GET Authorization 
+GET http://localhost:3080/api/v1/users/restrictedView
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg0ODc5MjIyLCJleHAiOjE2ODQ4ODI4MjJ9.N8jG0s78FOIaHJq4KFvZoG_qDDyYtIU348rMxxVbqpM
+
 
 ### GET hi
 GET http://localhost:3080/
