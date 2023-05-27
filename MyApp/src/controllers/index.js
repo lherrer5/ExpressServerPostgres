@@ -8,6 +8,9 @@ const pdtsController =require('./productsController');
 const usersController = require("./userController");
 
 //File authController.js
-const authController=require("./authController")
+const authController=require("./authController");
 
-module.exports = { healthCheckController, pdtsController, usersController, authController}
+//File io.js
+const io=require("./io")
+
+module.exports = { healthCheckController, pdtsController, usersController, authController, io}
