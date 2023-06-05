@@ -48,6 +48,6 @@ User.init({
 User.beforeCreate(async (user) => {
     const hashedPassword = await bcrypt.hash(user.password, 10);
     user.password = hashedPassword;
-  });
+});
 
 module.exports = User;

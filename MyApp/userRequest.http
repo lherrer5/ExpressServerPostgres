@@ -1,10 +1,9 @@
 # GET con y sin id
 GET http://localhost:3080/api/v1/users/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg1MjAwODU2LCJleHAiOjE2ODUyMDQ0NTZ9.mazJci5ZO0nDX27WaDUHN6oQcZAt9R2DSm2RYSZksKc
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg1NTU5OTk3LCJleHAiOjE2ODU1NjM1OTd9.5Kh6-b0GD0YSiuGBl8QHs0haC4UICBrHpDQZ_JNL0dQ
 ### GET Authorization 
 GET http://localhost:3080/api/v1/users/restrictedView
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg1MjAwODU2LCJleHAiOjE2ODUyMDQ0NTZ9.mazJci5ZO0nDX27WaDUHN6oQcZAt9R2DSm2RYSZksKc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg1NTU5OTE3LCJleHAiOjE2ODU1NjM1MTd9.Fg_GiLGC09Gkj44S9jz6qd5EhTSv8ctaZWMSt_UdJKY"
 
 
 ### GET hi
@@ -16,7 +15,7 @@ GET http://localhost:3080/health
 ###POST 
 POST http://localhost:3080/api/v1/users HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg0ODc2NDYwLCJleHAiOjE2ODQ4ODAwNjB9.5y2unrnKGAyPR7s7qs74FQNzqJYsw1hmiJLamLZ3iK0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg1NTU5OTU5LCJleHAiOjE2ODU1NjM1NTl9.aM6xlab6cGMb7lQ6M0vY18kIq_4Gi7E1Lql3284tfSo
 
 {
     "firstName": "Carlos",
@@ -39,7 +38,7 @@ Content-Type: application/json
 
 ###DELETE con ID unico
 DELETE http://localhost:3080/api/v1/users/3 HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg0ODc2NDYwLCJleHAiOjE2ODQ4ODAwNjB9.5y2unrnKGAyPR7s7qs74FQNzqJYsw1hmiJLamLZ3iK0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg1NTU5OTU5LCJleHAiOjE2ODU1NjM1NTl9.aM6xlab6cGMb7lQ6M0vY18kIq_4Gi7E1Lql3284tfSo
 
 ###PATCH con ID unico
 PATCH  http://localhost:3080/api/v1/users/1 HTTP/1.1
