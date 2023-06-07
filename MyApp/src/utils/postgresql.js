@@ -1,6 +1,18 @@
 const { Sequelize } = require("sequelize");
 
-module.exports = new Sequelize(process.env.POSTGRESQL_CONNECTION);
+module.exports = new Sequelize(process.env.POSTGRESQL_CONNECTION,{
+
+    dialect: 'postgres'
+});
+
+
+
+
+
+
+
+
+
 
 // import { Sequelize } from "sequelize";
 
@@ -10,6 +22,8 @@ module.exports = new Sequelize(process.env.POSTGRESQL_CONNECTION);
 //   throw new Error("POSTGRESQL_CONNECTION environment variable is not set.");
 // }
 
-// const sequelize = new Sequelize(connectionString);
+// const sequelize = new Sequelize(connectionString, {
+//   dialect: "postgres", 
+// });
 
 // export default sequelize;

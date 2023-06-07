@@ -5,6 +5,5 @@ const { healthCheck, welcomePage } = require("../controllers/healthCheckControll
 router
     .get("/", welcomePage)
     .get("/health", healthCheck);
-    //.use("/v1/", require("./v1"));
 
 module.exports = router;

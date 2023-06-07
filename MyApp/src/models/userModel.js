@@ -1,5 +1,6 @@
 const { DataTypes, Model } = require('sequelize');
-const sequelize = require("../utils/postgresql");
+import sequelize from "../utils/postgresql";
+//const sequelize = require("../utils/postgresql");
 const bcrypt = require('bcrypt');
 
 class User extends Model { }
