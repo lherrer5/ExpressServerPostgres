@@ -1,12 +1,15 @@
 const { Router } = require("express");
 const router = Router();
 const { healthCheckController } = require("../controllers");
+//const { welcomePage, healthCheck } = require("../controllers/healthCheckController");
 const path= require("path");
 
 
 router
     .get("/", healthCheckController.welcomePage)
     .get("/health", healthCheckController.healthCheck)
+    // .get("/", welcomePage)
+    // .get("/health", healthCheck)
     .use("/api/v1/products", require("./productRoute"))
     .use("/api/v1/users", require("./userRoute"));
 

@@ -11,4 +11,5 @@ productsRouter.post("/", pdtSchemaValidation.pdtSchemaValidation ,pdtsController
 productsRouter.patch("/:id", joiValidationId, updateSchemaValidation.updateSchemaValidation, pdtsController.updateProduct);
 productsRouter.delete("/:id", joiValidationId, pdtsController.deleteProduct);
 
+
 module.exports = productsRouter;

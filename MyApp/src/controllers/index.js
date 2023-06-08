@@ -1,5 +1,6 @@
 // File healthCheckController.js
 const healthCheckController = require('./healthCheckController');
+//const { healthCheck, welcomePage } = require('./healthCheckController');
 
 // File productsController.js
 const pdtsController =require('./productsController');
