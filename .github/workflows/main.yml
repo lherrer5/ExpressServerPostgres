@@ -31,5 +31,6 @@ jobs:
         with:
           name: build
           path: "MyApp/build"
+          ignore: node_modules
 
     
