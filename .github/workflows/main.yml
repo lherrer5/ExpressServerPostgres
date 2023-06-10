@@ -16,7 +16,10 @@ jobs:
         with:
           -node-version: 18.x
       
-      - name: Install Dependencies
-        run: npm ci --silent
+      - name: Install Dependencies & Build
+        run: |
+          npm ci --silent
+          npm run build
+        working-directory: "MyApp/"
 
     
