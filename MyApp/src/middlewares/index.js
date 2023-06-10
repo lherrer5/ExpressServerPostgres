@@ -4,7 +4,7 @@ const pdtSchemaValidation= require("./pdtSchemaValidation");
 const updateSchemaValidation = require("./pdtSchemaValidation");
 const userSchemaValidation = require("./userSchemaValidation");
 const userUpdateSchemaValidation = require("./userSchemaValidation");
-const joiValidationId = require("./joiIdValidator");
+const joiValidationId = require("./joiIdValidator").default;
 const isAuthenticated= require("./authValidation")
 
 
