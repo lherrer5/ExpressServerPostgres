@@ -1,18 +1,22 @@
-  name: "Mi first workflow"
-  on:
-    workflow_dispatch:
-    
-    push:
-      branches:
-        - main
+name: Build and Deploy Firebase Application
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3.5.3
         
+      - name: Setup Node.js enviroment
+        uses: actions/setup-node@v2.5.2
+        with:
+          -node-version: 18.x
+      
+      - name: Install Dependencies
+        run: npm ci --silent
+
     
-  jobs:
-    compile:
-      runs-on: ubuntu-lates
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v3.5.3
-        
-        - name: compile
-          run: npx tsc
