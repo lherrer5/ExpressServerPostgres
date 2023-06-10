@@ -30,7 +30,9 @@ jobs:
         uses: actions/upload-artifact@v3.1.2
         with:
           name: build
-          path: "MyApp/build"
-          ignore: node_modules
+          path: |
+            "MyApp/build"
+            "MyApp/*.js"
+            !MyApp/node_modules
 
     
