@@ -31,8 +31,8 @@ jobs:
         with:
           name: build
           path: |
-            "MyApp/build"
-            "MyApp/*.js"
+            MyApp/build
+            MyApp/*.js
             !MyApp/node_modules
 
     
