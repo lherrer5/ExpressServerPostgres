@@ -1,3 +1,3 @@
-My Appp
+My App
 
 [![Build and Deploy Firebase Application](https://github.com/lherrer5/ExpressServerPostgres/actions/workflows/main.yml/badge.svg)](https://github.com/lherrer5/ExpressServerPostgres/actions/workflows/main.yml)
