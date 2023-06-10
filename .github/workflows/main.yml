@@ -2,6 +2,10 @@ name: Build and Deploy Firebase Application
 
 on:
   workflow_dispatch:
+  
+  push:
+    branches:
+      - main
 
 jobs:
   build:
